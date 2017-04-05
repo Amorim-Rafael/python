@@ -1,8 +1,15 @@
 import meuprograma
 
-ano_corrente = 2057
+ano_corrente = 2017
+pode_parar = False
+lista_entrevistados = []
 
-nome_informado = meuprograma.pergunta_nome()
-meuprograma.pergunta_idade()
+while pode_parar == False:
+    entrevistado = meuprograma.Entrevistado()  
+    if entrevistado.pergunta_nome() == "parar":
+        pode_parar = True
+    else:
+        entrevistado.pergunta_idade(ano_atual=ano_corrente)
+        lista_entrevistados.append(entrevistado)
 
-print(nome_informado)
+print(lista_entrevistados)
