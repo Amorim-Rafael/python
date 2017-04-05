@@ -13,3 +13,10 @@ while pode_parar == False:
         lista_entrevistados.append(entrevistado)
 
 print(lista_entrevistados)
+
+for x in lista_entrevistados:
+    print("O nome é {} e o ano de nascimento é {}".format(
+            x.nome,
+            x.ano_informado
+        )
+    )
