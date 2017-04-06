@@ -8,8 +8,16 @@ while pode_parar == False:
     if entrevistado.pergunta_nome() == "parar":
         pode_parar = True
     else:
-        entrevistado.pergunta_idade()
-        lista_entrevistados.append(entrevistado)
+        try:
+            entrevistado.pergunta_idade()
+            x = 1000/0            
+        except ZeroDivisionError:
+            print("Ocorreu um erro, mais o entrevistado foi inserido na lista")        
+            lista_entrevistados.append(entrevistado)
+        except:
+            print("Ocorreu um erro, mais o entrevistado não foi inserido na lista")
+        else:
+            lista_entrevistados.append(entrevistado)
 
 print(lista_entrevistados)
 
