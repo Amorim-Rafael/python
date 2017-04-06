@@ -7,8 +7,13 @@ class Entrevistado():
     idade = 0
 
     def pergunta_nome(self):
-        self.nome = input("Qual é o seu nome? ")
-        print('O seu nome é "' + self.nome + '"')
+        nome_digitado = False
+        while nome_digitado == False:
+            self.nome = input("Qual é o seu nome? ")            
+            if self.nome:
+                nome_digitado = True
+                print('O seu nome é "' + self.nome + '"')
+
         return self.nome
     
     def pergunta_idade(self):  
