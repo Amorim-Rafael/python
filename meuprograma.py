@@ -1,3 +1,5 @@
+import datetime
+
 class Entrevistado():
 
     nome = ""
@@ -9,7 +11,8 @@ class Entrevistado():
         print('O seu nome é "' + self.nome + '"')
         return self.nome
     
-    def pergunta_idade(self, ano_atual=2017):    
+    def pergunta_idade(self):  
+        ano_atual = datetime.date.today().year  
         # Perguntar em que ano você nasceu
         self.ano_informado = int(input("Em que ano você nasceu " + self.nome + "? "))
         # Substrair o ano atual do ano informado
