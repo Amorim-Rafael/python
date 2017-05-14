@@ -7,14 +7,32 @@ class Entrevistado():
     idade = 0
 
     def pergunta_nome(self):
-        self.nome = input("Qual é o seu nome? ")
-        print('O seu nome é "' + self.nome + '"')
+        nome_digitado = False
+        while nome_digitado == False:
+            self.nome = input("Qual é o seu nome? (digite 'parar' para parar) ")
+            if self.nome:
+                nome_digitado = True
+                print('O seu nome é "' + self.nome + '"')
         return self.nome
     
     def pergunta_idade(self):  
         ano_atual = datetime.date.today().year  
-        # Perguntar em que ano você nasceu
-        self.ano_informado = int(input("Em que ano você nasceu " + self.nome + "? "))
+        ano_digitado = False
+
+        while ano_digitado == False:
+            try:
+                # Perguntar em que ano você nasceu
+                self.ano_informado = int(input("Em que ano você nasceu " + self.nome + "? "))
+                ano_digitado = True
+            except:
+                continue
+            else:
+                if self.ano_informado >= 1900 and self.ano_informado <= ano_atual:
+                    pass
+                else:                    
+                    ano_digitado = False
+                    print('Ano inválido!')
+        
         # Substrair o ano atual do ano informado
         self.idade = ano_atual - self.ano_informado
         # Imprimir na tela a idade calculado    
