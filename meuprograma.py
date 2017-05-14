@@ -12,7 +12,12 @@ class Entrevistado():
             self.nome = input("Qual é o seu nome? (digite 'parar' para parar) ")
             if self.nome:
                 nome_digitado = True
-                print('O seu nome é "' + self.nome + '"')
+                if self.nome.lower() != 'parar':
+                    print('O seu nome é "' + self.nome + '"')
+        
+        # title() deixa a primeira letra maiuscula e o restante minuscula
+        self.nome = self.nome.title()                    
+        
         return self.nome
     
     def pergunta_idade(self):  

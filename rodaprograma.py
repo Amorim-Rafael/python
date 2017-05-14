@@ -5,7 +5,8 @@ lista_entrevistados = []
 
 while pode_parar == False:
     entrevistado = meuprograma.Entrevistado()  
-    if entrevistado.pergunta_nome() == 'parar':
+    # lower() deixa as letras minusculas
+    if entrevistado.pergunta_nome().lower() == 'parar':
         pode_parar = True
     else:
         try:
