@@ -22,11 +22,26 @@ while pode_parar == False:
         else:
             lista_entrevistados.append(entrevistado)
 
-print(lista_entrevistados)
 
-for x in lista_entrevistados:
-    print('O nome é {} e o ano de nascimento é {}'.format(
-            x.nome,
-            x.ano_informado
-        )
-    )
+# Mostrar a menor idade calculada
+# Mostrar a maior idade calculada
+# Mostrar a media de idade calculada
+# Mostrar a quantidade de nascimentos por decada
+
+
+# lista_idades = []
+# Preenchimento comum de uma lista 
+# for item in lista_entrevistados:
+#     lista_idades.append(item.idade)
+
+# menor_idade = min(lista_idades)
+# maior_idade = max(lista_idades)
+
+# Lista por Compreensão
+# lista = [expresao loop]
+# lista_idades = [item.idade for item in lista_entrevistados]
+menor_idade = min([item.idade for item in lista_entrevistados])
+maior_idade = max([item.idade for item in lista_entrevistados])
+
+print('Menor idade é:',menor_idade)
+print('Maior idade é:',maior_idade)
