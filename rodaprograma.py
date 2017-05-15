@@ -48,13 +48,25 @@ media_adulto = statistics.median_high([item.idade for item in lista_entrevistado
 
 # 1985 / 10 = 198,5 int > 198 * 10 = 1980
 lista_decadas = [int(item.ano_informado/10)*10 for item in lista_entrevistados]
+# set(): lista que valores não se repetem e não podem ser ordenadas
 set_decadas = set(lista_decadas)
 qtd_nascimentos = { decada:lista_decadas.count(decada) for decada in set_decadas }
 
-# set(): lista que valores não se repetem e não podem ser ordenadas
-print('lista_decadas:',lista_decadas)
-print('set_decadas:',set_decadas)
-print('qtd_nascimentos:',qtd_nascimentos)
+# print('lista_decadas:',lista_decadas)
+# print('set_decadas:',set_decadas)
+# print('qtd_nascimentos:',qtd_nascimentos)
 # print('Menor idade é:',menor_idade)
 # print('Maior idade é:',maior_idade)
 # print('Media idade adulto:',media_adulto)
+
+print('\nResultados:')
+print('---------------------------------------')
+print('Quantidade de entrevistas: {}'.format(len(lista_entrevistados)))
+print('Menor idade: {}'.format(menor_idade))
+print('Maior idade: {}'.format(maior_idade))
+print('Média de idade dos adultos: {}'.format(media_adulto))
+print('\nNascimentos por Década')
+print('---------------------------------------')
+for decada, quantidade in qtd_nascimentos.items():
+    print('{}: {} nascimento(s)'.format(decada, quantidade))
+print('\n')    
