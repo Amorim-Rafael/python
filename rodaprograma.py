@@ -41,13 +41,20 @@ media_adulto = statistics.median_high([item.idade for item in lista_entrevistado
 # 1º passo: converter anos em decadas
 # 2º passo: criar uma lista nova com decadas sem repetir
 # 3º passo: contar as decadas da lista original na lista nova
-
+# Para cada decada dentro da lista nova (set) contar qtas vezes ela aparece na lista original
+# Dicionário por Compreensão
+# dicionario = { <expressao para a chave>:<expressao para o valor> <loop> <expressao para o loop> }
 # O que queremos: [1970:2, 1980:5, 1990:1, 2000:2]
 
 # 1985 / 10 = 198,5 int > 198 * 10 = 1980
 lista_decadas = [int(item.ano_informado/10)*10 for item in lista_entrevistados]
+set_decadas = set(lista_decadas)
+qtd_nascimentos = { decada:lista_decadas.count(decada) for decada in set_decadas }
+
 # set(): lista que valores não se repetem e não podem ser ordenadas
 print('lista_decadas:',lista_decadas)
+print('set_decadas:',set_decadas)
+print('qtd_nascimentos:',qtd_nascimentos)
 # print('Menor idade é:',menor_idade)
 # print('Maior idade é:',maior_idade)
 # print('Media idade adulto:',media_adulto)
