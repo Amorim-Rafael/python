@@ -1,4 +1,5 @@
 import meuprograma
+import statistics
 
 pode_parar = False
 lista_entrevistados = []
@@ -38,10 +39,12 @@ while pode_parar == False:
 # maior_idade = max(lista_idades)
 
 # Lista por Compreensão
-# lista = [expresao loop]
+# lista = [<expresao para valor> <loop> <expressao para o loop>]
 # lista_idades = [item.idade for item in lista_entrevistados]
 menor_idade = min([item.idade for item in lista_entrevistados])
 maior_idade = max([item.idade for item in lista_entrevistados])
+media_adulto = statistics.median_high([item.idade for item in lista_entrevistados if item.idade >= 18])
 
 print('Menor idade é:',menor_idade)
 print('Maior idade é:',maior_idade)
+print('Media idade adulto:',media_adulto)
